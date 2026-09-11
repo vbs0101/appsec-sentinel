@@ -29,114 +29,160 @@ Structured testing aligned with:
 * Session management
 * Business logic testing
 * Security misconfiguration review
+---
+# 🚀 Installation
+
+## Claude Code
+
+### Personal Installation
+
+Install AppSec Sentinel as a personal Claude Code Skill:
+
+```bash
+mkdir -p ~/.claude/skills
+
+git clone https://github.com/vbs0101/appsec-sentinel.git \
+~/.claude/skills/appsec-sentinel
+```
+
+Your installation should look like:
+
+```text
+~/.claude/skills/
+└── appsec-sentinel/
+    ├── SKILL.md
+    ├── modules/
+    ├── checklists/
+    ├── workflows/
+    ├── templates/
+    └── examples/
+```
+
+Restart Claude Code after installation.
 
 ---
 
-# 🚀 Quick Start
+## Project Installation
 
-AppSec Sentinel is a Claude Skill that provides a structured methodology for authorized security testing of Web Applications, APIs, and Mobile Applications.
-
-## 1. Clone the Repository
+To make AppSec Sentinel available only inside a specific project:
 
 ```bash
-git clone https://github.com/vbs0101/appsec-sentinel.git
-cd appsec-sentinel
+mkdir -p .claude/skills
+
+git clone https://github.com/vbs0101/appsec-sentinel.git \
+.claude/skills/appsec-sentinel
 ```
 
-## 2. Open Claude Code
+The project structure will be:
 
-Start Claude Code from the project directory:
+```text
+your-project/
+├── .claude/
+│   └── skills/
+│       └── appsec-sentinel/
+│           ├── SKILL.md
+│           ├── modules/
+│           ├── checklists/
+│           ├── workflows/
+│           ├── templates/
+│           └── examples/
+│
+└── your-application/
+```
+
+---
+
+# 🤖 How to Use
+
+Once installed, start Claude Code:
 
 ```bash
 claude
 ```
 
-## 3. Use AppSec Sentinel
+Then describe the authorized security assessment you want to perform.
 
-Tell Claude what you want to assess and confirm that you are authorized to test the target.
+## Web Application Example
 
-Example:
+```text
+Use AppSec Sentinel to perform an authorized security assessment.
 
-> Use AppSec Sentinel to perform an authorized security assessment of this web application.
->
-> Target: https://staging.example.com
-> Environment: Staging
-> Authorization: Confirmed
-> Restrictions: No destructive testing or denial-of-service testing.
->
-> Follow the relevant module, checklist, workflow, and reporting templates.
+Target Type: Web Application
 
-AppSec Sentinel will guide the assessment through:
+Authorization: Confirmed
 
-1. Scope definition
-2. Target classification
-3. Attack surface discovery
-4. Security testing
-5. Finding validation
-6. Evidence collection
-7. Risk classification
-8. Coverage tracking
-9. Security reporting
+Environment: Staging
+
+Scope:
+- Authentication
+- User functionality
+- File uploads
+- Administrative functionality
+
+Restrictions:
+- No destructive testing
+- No denial-of-service testing
+
+Assess the application using the relevant OWASP methodology and generate a structured security assessment report.
+```
 
 ---
 
-# 💻 Claude Code Usage
-
-AppSec Sentinel uses `SKILL.md` as the primary skill instruction file.
-
-The skill automatically selects the relevant resources depending on the assessment type.
-
-### Web Application
-
-Uses:
+## API Example
 
 ```text
-modules/web/owasp-top10.md
-checklists/web-checklist.md
-workflows/security-testing-workflow.md
+Use AppSec Sentinel to perform an authorized API security assessment.
+
+Target Type: REST API
+
+Authorization: Confirmed
+
+Environment: Staging
+
+Scope:
+- Authentication endpoints
+- User endpoints
+- Administrative endpoints
+- Object-level authorization
+
+Restrictions:
+- No destructive testing
+- No denial-of-service testing
+
+Assess the API using the OWASP API Security methodology.
+Track testing coverage and validate all findings before reporting them.
 ```
-
-Example:
-
-> Use AppSec Sentinel to assess this authorized web application against the OWASP Top 10.
 
 ---
 
-### API
-
-Uses:
+## Mobile Application Example
 
 ```text
-modules/api/owasp-api-top10.md
-checklists/api-checklist.md
-workflows/security-testing-workflow.md
+Use AppSec Sentinel to perform an authorized mobile application security assessment.
+
+Platform: Android
+
+Authorization: Confirmed
+
+Scope:
+- Authentication
+- Secure storage
+- Network security
+- Deep links
+- WebViews
+
+Restrictions:
+- No destructive testing
+- Do not unnecessarily access production data
+
+Use the relevant mobile security methodology and generate a structured assessment report.
 ```
-
-Example:
-
-> Use AppSec Sentinel to assess this authorized REST API against the OWASP API Security Top 10.
-
----
-
-### Mobile Application
-
-Uses:
-
-```text
-modules/mobile/mobile-security.md
-checklists/mobile-checklist.md
-workflows/security-testing-workflow.md
-```
-
-Example:
-
-> Use AppSec Sentinel to perform an authorized security assessment of this Android application.
 
 ---
 
 # 📊 Reporting
 
-AppSec Sentinel includes templates for professional security reporting.
+AppSec Sentinel includes templates for security reporting.
 
 ### Full Security Assessment
 
@@ -150,7 +196,7 @@ templates/security-assessment-report.md
 templates/vulnerability-report.md
 ```
 
-### Testing Coverage Matrix
+### Security Coverage Matrix
 
 ```text
 templates/coverage-matrix.md
@@ -158,34 +204,25 @@ templates/coverage-matrix.md
 
 Example:
 
-> Generate the final security assessment report using `templates/security-assessment-report.md`.
+```text
+Generate the final security assessment report using the AppSec Sentinel reporting templates.
+Include testing coverage, confirmed findings, recommendations, and testing limitations.
+```
 
 ---
 
-# ⚡ Quick Example
+# 🔄 Updating the Skill
 
-```text
-Use AppSec Sentinel for an authorized API security assessment.
+To update AppSec Sentinel:
 
-Target: https://api.example.com
+```bash
+cd ~/.claude/skills/appsec-sentinel
 
-Environment: Staging
-
-Authorization: Confirmed
-
-Scope:
-- Authentication endpoints
-- User endpoints
-- Administrative endpoints
-
-Restrictions:
-- No destructive testing
-- No denial-of-service testing
-
-Assess the API using the OWASP API Security Top 10 methodology.
-
-Track testing coverage and generate a final security assessment report.
+git pull
 ```
+
+Restart Claude Code after updating.
+
 
 ---
 
