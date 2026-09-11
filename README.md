@@ -1,6 +1,3 @@
-# appsec-sentinel
-AI-powered application security testing skill for Claude, aligned with OWASP security testing standards.
-
 # 🛡️ AppSec Sentinel
 
 > A structured Claude Skill for authorized Web Application, API, and Mobile Application Security Testing.
