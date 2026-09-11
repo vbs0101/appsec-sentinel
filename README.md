@@ -61,7 +61,7 @@ Restart Claude Code after installation.
 
 ## Project Installation
 
-To make AppSec Sentinel available only inside a specific project:
+To make AppSec Sentinel available only within a specific Claude Code project, run the following commands from the project's root directory:
 
 ```bash
 mkdir -p .claude/skills
